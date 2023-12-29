@@ -1,0 +1,88 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import Social from '../components/Social.astro';
+import GitHub from '../components/icons/GitHub.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import Gmail from '../components/icons/Gmail.astro';
+import BriefCase from '../components/icons/BriefCase.astro';
+import Experience from '../components/Experience.astro';
+import Container from '../components/Container.astro';
+import Code from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout
+  title='Portfolio de Juan Pablo Costa - Desarrollador y Programador Web'
+  description='Contrata a Juan Pablo Costa para crear tu aplicación web. Desarrollador y Programador Web. Especializado en crear aplicaciones únicas.'
+>
+  <main>
+    <Container
+      class='pt-20 sm:pt-44 pb-16 sm:pb-24 lg:flex lg:flex-row justify-center lg:justify-between items-center lg:gap-x-8'
+    >
+      <div class='flex flex-col'>
+        <header class='flex flex-col justify-center items-center pb-5'>
+          <h1
+            class='text-white text-4xl sm:text-6xl font-bold flex flex-row items-center gap-x-4 pb-10 w-full'
+          >
+            Soy Juan Pablo Costa <a
+              href='/contact'
+              class='flex justify-center items-center'
+            >
+              <Badge>Disponible para trabajar</Badge>
+            </a>
+          </h1>
+          <h2 class='text-md sm:text-2xl opacity-80 text-wrap'>
+            <span>+2 años trabajando en mis proyectos.</span>
+            <span class='text-yellow-200/90'>Desarrolador Web</span>
+            <span class='text-blue-300'> de Mendoza, Argentina</span>
+            <span class='opacity-85'
+              >especializado en crear aplicaciones únicas.</span
+            >
+          </h2>
+        </header>
+        <footer class='flex justify-end'>
+          <nav class='flex flex-wrap gap-2'>
+            <Social href='https://github.com/Juampicosta123'>
+              <GitHub class='size-4 sm:size-6' />
+              <p class='text-xs sm:text-lg'>GitHub</p>
+            </Social>
+            <Social href='https://github.com/Juampicosta123'>
+              <LinkedIn class='size-4 sm:size-6' />
+              <p class='text-xs sm:text-lg'>LinkedIn</p>
+            </Social>
+            <Social href='mailto:juampicosta81@gmail.com'>
+              <Gmail class='size-4 sm:size-6' />
+              <p class='text-xs sm:text-lg'>juampicosta81@gmail.com</p>
+            </Social>
+          </nav>
+        </footer>
+      </div>
+      <img
+        src='../../me.webp'
+        alt='Juan Pablo Costa'
+        class='hidden rounded-full lg:block w-[300px] h-auto shadow-xl shadow-[#1c1c34]/40'
+      />
+    </Container>
+
+    <Container id='experiencia' class='pb-10 sm:pb-24'>
+      <h2
+        class='text-lg sm:text-3xl font-semibold mb-6 flex gap-x-3 items-center'
+      >
+        <BriefCase class='size-7' />
+         Experiencia Laboral
+      </h2>
+      <Experience />
+    </Container>
+
+    <Container id='proyectos'>
+      <h2
+        class='text-lg sm:text-3xl font-semibold mb-6 flex gap-x-3 items-center'
+      >
+        <Code class='size-7' />
+         Mis Proyectos
+      </h2>
+      <Projects />
+    </Container>
+  </main>
+</Layout>

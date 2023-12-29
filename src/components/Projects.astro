@@ -1,0 +1,66 @@
+---
+import Nextjs from '../components/icons/Nextjs.astro';
+import Tailwind from '../components/icons/Tailwind.astro';
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'bg-black text-white',
+    icon: Nextjs
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon: Tailwind
+  }
+};
+
+const PROJECTS = [
+  {
+    title: 'E-commerce con Tailwind y React',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error hic quasi dolor repudiandae. Harum ab et autem, odio doloremque temporibus iure consequuntur omnis ducimus assumenda iste natus, veniam, ad sapiente!',
+    link: 'github.com',
+    image:
+      'https://colorlib.com/wp/wp-content/uploads/sites/2/ezy-ecommerce-website-template.jpg',
+    tags: [TAGS.TAILWIND, TAGS.NEXT]
+  },
+  {
+    title: 'Desarrollo de una aplicación con React y Redux',
+    description:
+      'Construcción de una aplicación web utilizando React para la interfaz de usuario y Redux para la gestión del estado global.',
+    link: 'github.com/react-redux-app',
+    image:
+      'https://colorlib.com/wp/wp-content/uploads/sites/2/ezy-ecommerce-website-template.jpg',
+    tags: [TAGS.TAILWIND, TAGS.NEXT]
+  }
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article class='mb-10'>
+      <h3 class='text-lg sm:text-2xl font-semibold text-blue-400 mb-2'>
+        {title}
+      </h3>
+      <p class='text-sm mb-3 text-pretty'>{description}</p>
+      <ul class='flex gap-x-2 flex-row mb-5'>
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs sm:text-sm ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class='size-4' />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class='rounded shadow-2xl shadow-white/10 max-w-full block h-auto'
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title} `}
+      />
+    </article>
+  ))
+}
