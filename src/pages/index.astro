@@ -23,13 +23,13 @@ import Projects from '../components/Projects.astro';
       <div class='flex flex-col'>
         <header class='flex flex-col justify-center items-center pb-5'>
           <h1
-            class='text-white text-4xl sm:text-6xl font-bold flex flex-row items-center gap-x-4 pb-10 w-full'
+            class='text-white text-4xl sm:text-6xl font-bold flex flex-row justify-between items-center gap-x-4 pb-10 w-full'
           >
             Soy Juan Pablo Costa <a
               href='/contact'
               class='flex justify-center items-center'
             >
-              <Badge>Disponible para trabajar</Badge>
+              <Badge>💼Disponible</Badge>
             </a>
           </h1>
           <h2 class='text-md sm:text-2xl opacity-80 text-wrap'>
@@ -70,7 +70,7 @@ import Projects from '../components/Projects.astro';
         class='text-lg sm:text-3xl font-semibold mb-6 flex gap-x-3 items-center'
       >
         <BriefCase class='size-7' />
-         Experiencia Laboral
+        Experiencia Laboral
       </h2>
       <Experience />
     </Container>
@@ -80,7 +80,7 @@ import Projects from '../components/Projects.astro';
         class='text-lg sm:text-3xl font-semibold mb-6 flex gap-x-3 items-center'
       >
         <Code class='size-7' />
-         Mis Proyectos
+        Mis Proyectos
       </h2>
       <Projects />
     </Container>
