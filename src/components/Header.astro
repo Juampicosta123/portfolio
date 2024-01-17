@@ -1,9 +1,35 @@
-<header class='flex justify-center items-center py-5 mx-auto'>
+---
+
+---
+
+<header
+  class='fixed top-0 left-0 z-10 backdrop-blur-sm w-full flex justify-center items-center py-5 mx-auto'
+>
   <nav class='flex flex-row gap-x-5 sm:gap-x-10 text-gray-300'>
-    <a class='text-sm sm:text-lg' href='#top'>Inicio</a>
-    <a class='text-sm sm:text-lg' href='#sobre.mi'>Sobre mí</a>
-    <a class='text-sm sm:text-lg' href='#experiencia'>Experiencia</a>
-    <a class='text-sm sm:text-lg' href='#proyectos'>Proyectos</a>
-    <a class='text-sm sm:text-lg' href='#contacto'>Contacto</a>
+    <a class='text-sm sm:text-lg link-underline' href='#top'>Inicio</a>
+    <a class='text-sm sm:text-lg link-underline' href='#sobre.mi'>Sobre mí</a>
+    <a class='text-sm sm:text-lg link-underline' href='#experiencia'
+      >Experiencia</a
+    >
+    <a class='text-sm sm:text-lg link-underline' href='#proyectos'>Proyectos</a>
+    <a class='text-sm sm:text-lg link-underline' href='#contacto'>Contacto</a>
   </nav>
 </header>
+
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+  }
+
+  .link-underline:hover {
+    color: #fff;
+    background-size: 100% 2px;
+    background-position: 0 100%;
+  }
+</style>
