@@ -1,6 +1,10 @@
 ---
 import Nextjs from '../components/icons/Nextjs.astro';
 import Tailwind from '../components/icons/Tailwind.astro';
+import GitHub from './icons/GitHub.astro';
+import Web from './icons/Web.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+import Express from './icons/Express.astro';
 
 const TAGS = {
   NEXT: {
@@ -12,23 +16,33 @@ const TAGS = {
     name: 'Tailwind CSS',
     class: 'bg-[#003159] text-white',
     icon: Tailwind
+  },
+  ASTRO: {
+    name: 'Astro',
+    class: 'bg-[#362563] text-white',
+    icon: AstroIcon
+  },
+  EXPRESS: {
+    name: 'Express',
+    class: 'bg-[#fff] text-black',
+    icon: Express
   }
 };
 
 const PROJECTS = [
   {
+    title: 'Spotify Clone',
+    description:
+      'Construcción de Spotify con fines de aprender. En el Frontend utilicé Astro y Tailwind, para algunos componentes usé React. En el Backend utilicé Express con Node.js y de Base de datos utilicé Mongodb',
+    link: 'github.com/react-redux-app',
+    image: '/spotifyclone.png',
+    tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.EXPRESS]
+  },
+  {
     title: 'E-commerce con Tailwind y React',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error hic quasi dolor repudiandae. Harum ab et autem, odio doloremque temporibus iure consequuntur omnis ducimus assumenda iste natus, veniam, ad sapiente!',
     link: 'github.com',
-    image: '/ecommerce.webp',
-    tags: [TAGS.TAILWIND, TAGS.NEXT]
-  },
-  {
-    title: 'Desarrollo de una aplicación con React y Redux',
-    description:
-      'Construcción de una aplicación web utilizando React para la interfaz de usuario y Redux para la gestión del estado global.',
-    link: 'github.com/react-redux-app',
     image: '/ecommerce.webp',
     tags: [TAGS.TAILWIND, TAGS.NEXT]
   }
@@ -37,8 +51,8 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image }) => (
-    <article class='mb-10'>
-      <h3 class='text-lg sm:text-2xl font-semibold text-blue-400 mb-2'>
+    <article class='mb-10 bg-[rgb(25,31,45)] p-6 rounded'>
+      <h3 class='text-lg sm:text-2xl font-semibold text-blue-400 mb-2 '>
         {title}
       </h3>
       <p class='text-sm mb-3 text-pretty'>{description}</p>
@@ -55,10 +69,30 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class='rounded shadow-2xl shadow-white/10  block h-auto w-full max-w-[800px]'
+        class='rounded shadow-xl shadow-white/10  block h-auto w-full max-w-[1200px]'
         src={image}
         alt={`Captura de pantalla del proyecto ${title} `}
       />
+      <footer class='flex justify-start gap-x-2 pt-4 px-2'>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          class='rounded-full w-min text-sm border border-white/10 py-1 px-1 sm:py-2 sm:px-2 bg-white/5 flex flex-row gap-x-2 hover:scale-105 hover:bg-white/10 transition items-center'
+          href='https://github.com/Juampicosta123'
+        >
+          <GitHub class='size-3 sm:size-5' />
+          GitHub
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          class='rounded-full w-min border text-sm border-white/10 py-1 px-1 sm:py-2 sm:px-2 bg-white/5 flex flex-row gap-x-2 hover:scale-105 hover:bg-white/10 transition items-center'
+          href='https://github.com/Juampicosta123'
+        >
+          <Web class='size-3 sm:size-5' />
+          Ver
+        </a>
+      </footer>
     </article>
   ))
 }
