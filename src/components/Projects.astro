@@ -5,6 +5,8 @@ import GitHub from './icons/GitHub.astro';
 import Web from './icons/Web.astro';
 import AstroIcon from './icons/AstroIcon.astro';
 import Express from './icons/Express.astro';
+import React from './icons/React.astro';
+import Mongodb from './icons/Mongodb.astro';
 
 const TAGS = {
   NEXT: {
@@ -26,6 +28,16 @@ const TAGS = {
     name: 'Express',
     class: 'bg-[#fff] text-black',
     icon: Express
+  },
+  REACT: {
+    name: 'React',
+    class: 'bg-[#23272f] text-white',
+    icon: React
+  },
+  MONGODB: {
+    name: 'Mongodb',
+    class: 'bg-[#00684A] text-white',
+    icon: Mongodb
   }
 };
 
@@ -33,16 +45,18 @@ const PROJECTS = [
   {
     title: 'Spotify Clone',
     description:
-      'Construcción de Spotify con fines de aprender. En el Frontend utilicé Astro y Tailwind, para algunos componentes usé React. En el Backend utilicé Express con Node.js y de Base de datos utilicé Mongodb',
-    link: 'github.com/react-redux-app',
+      'Lo hice con fines de aprender. En el Frontend utilicé Astro y Tailwind, para algunos componentes usé React. En el Backend trabajé Express con Node.js y de Base de datos Mongodb.',
+    ghlink: 'github.com/react-redux-app',
+    weblink: 'https://spoclonae.netlify.app/',
     image: '/spotifyclone.png',
-    tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.EXPRESS]
+    tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.REACT, TAGS.EXPRESS, TAGS.MONGODB]
   },
   {
     title: 'E-commerce con Tailwind y React',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error hic quasi dolor repudiandae. Harum ab et autem, odio doloremque temporibus iure consequuntur omnis ducimus assumenda iste natus, veniam, ad sapiente!',
-    link: 'github.com',
+    ghlink: 'github.com',
+    weblink: 'github.com',
     image: '/ecommerce.webp',
     tags: [TAGS.TAILWIND, TAGS.NEXT]
   }
@@ -50,7 +64,7 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
+  PROJECTS.map(({ title, description, tags, image, ghlink, weblink }) => (
     <article class='mb-10 bg-[rgb(25,31,45)] p-6 rounded'>
       <h3 class='text-lg sm:text-2xl font-semibold text-blue-400 mb-2 '>
         {title}
@@ -60,7 +74,7 @@ const PROJECTS = [
         {tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-xs sm:text-sm ${tag.class} py-1 px-2`}
+              class={`flex gap-x-2 rounded-full text-xs sm:text-sm ${tag.class} items-center justify-center py-1 px-2`}
             >
               <tag.icon class='size-4' />
               {tag.name}
@@ -78,7 +92,7 @@ const PROJECTS = [
           target='_blank'
           rel='noopener noreferrer'
           class='rounded-full w-min text-sm border border-white/10 py-1 px-1 sm:py-2 sm:px-2 bg-white/5 flex flex-row gap-x-2 hover:scale-105 hover:bg-white/10 transition items-center'
-          href='https://github.com/Juampicosta123'
+          href={ghlink}
         >
           <GitHub class='size-3 sm:size-5' />
           GitHub
@@ -87,7 +101,7 @@ const PROJECTS = [
           target='_blank'
           rel='noopener noreferrer'
           class='rounded-full w-min border text-sm border-white/10 py-1 px-1 sm:py-2 sm:px-2 bg-white/5 flex flex-row gap-x-2 hover:scale-105 hover:bg-white/10 transition items-center'
-          href='https://github.com/Juampicosta123'
+          href={weblink}
         >
           <Web class='size-3 sm:size-5' />
           Ver
