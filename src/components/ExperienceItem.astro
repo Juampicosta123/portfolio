@@ -13,7 +13,10 @@ const { date, title, description, link } = Astro.props;
   >{date}</time
 >
 <div class='flex flex-row gap-x-2'>
-  <a href={link} class='text-md sm:text-xl font-semibold text-blue-400 mt-2'>
+  <a
+    href={link}
+    class='text-md sm:text-xl font-semibold text-blue-400 mt-2 transition hover:scale-[1.02] ease-in-out'
+  >
     {title}
   </a>
 </div>
