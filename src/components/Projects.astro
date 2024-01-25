@@ -49,7 +49,7 @@ const PROJECTS = [
       'Lo hice con fines de aprender. En el Frontend utilicé Astro y Tailwind, para algunos componentes usé React. En el Backend trabajé Express con Node.js y de Base de datos Mongodb. Además use View Transitions API que le da un toque al cambiar de ruta.',
     ghlink: 'github.com/react-redux-app',
     weblink: 'https://spoclonae.netlify.app/',
-    image: '/spotifyclone.png',
+    image: '/spotifyclone.webp',
     tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.REACT, TAGS.EXPRESS, TAGS.MONGODB]
   },
   {
@@ -84,18 +84,18 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class='rounded shadow-xl shadow-white/10  block h-auto w-full max-w-[1200px]'
+        class='rounded shadow-xl shadow-white/10  block h-auto w-full max-w-[1280px]'
         src={image}
         alt={`Captura de pantalla del proyecto ${title} `}
       />
-      <footer class='flex justify-start gap-x-2 pt-4 px-2'>
+      <footer class='flex justify-end gap-x-2 pt-4 px-2'>
         <LinkButton href={ghlink}>
           <GitHub class='size-3 sm:size-5' />
-          GitHub
+          Ver código
         </LinkButton>
         <LinkButton href={weblink}>
           <Web class='size-3 sm:size-5' />
-          Ver
+          Ver sitio web
         </LinkButton>
       </footer>
     </article>
