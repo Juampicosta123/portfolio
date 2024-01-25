@@ -24,16 +24,22 @@ import Social from '../components/Social.astro';
     >
       <div class='flex flex-col'>
         <header class='flex flex-col justify-center items-center pb-5'>
-          <h1
-            class='text-white text-5xl sm:text-6xl font-bold flex flex-row justify-between items-center gap-x-4 pb-10 w-full'
+          <div
+            class='flex flex-row justify-between items-center gap-x-4 pb-10 w-full'
           >
-            Juan Pablo Costa <a
+            <h1
+              class='text-blue-400 text-5xl sm:text-6xl font-bold text-pretty'
+            >
+              Juan Pablo Costa
+            </h1>
+            <a
               href='/contact'
-              class='flex justify-center items-center'
+              class='flex justify-center items-center hover:scale-105 transition'
             >
               <Badge>💼Disponible</Badge>
             </a>
-          </h1>
+          </div>
+
           <h2 class='text-md sm:text-2xl opacity-80 text-wrap'>
             <span>+2 años trabajando en mis proyectos.</span>
             <span class='text-yellow-200/90'>Desarrolador Web</span>
